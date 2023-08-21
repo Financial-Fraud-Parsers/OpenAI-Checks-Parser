@@ -22,7 +22,7 @@ def main(directory, out):
     files_with_outputs = []
 
     for file in files:
-        with open(os.path.join(directory, file), "r") as f:
+        with open(os.path.join(directory, file), "r", encoding='utf-8') as f:
             files_with_outputs.append(
                 {"filename": file, "content": "".join(f.read().split("\n")[:-1])})
 
