@@ -1,5 +1,4 @@
 .env
-.env.sample
 creds.json
 out.csv
 out.json
