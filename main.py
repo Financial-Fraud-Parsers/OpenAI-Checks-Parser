@@ -18,7 +18,7 @@ handler.setFormatter(colorlog.ColoredFormatter(
 
 
 def main(inputs, out):
-    with open(inputs, "r", encoding='utf-8') as f:
+    with open(inputs, "r") as f:
         files = [json.loads(line.strip()) for line in f if line.strip()]
 
     cost_of_operation = calculate_google_maps_price(len(files))
@@ -51,7 +51,7 @@ def main(inputs, out):
             logger.info("Traceback:")
             raise e
 
-    with open(out, "w", encoding='utf-8') as f:
+    with open(out, "w") as f:
         writer = csv.writer(f)
 
         header = ["Picture ID", "Picture Date", "Bank Name", "Bank Address", "Victim Name", "Victim Street Address", "Victim Zip Code",
